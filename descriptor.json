@@ -1,0 +1,25 @@
+{
+  "name": "merge",
+  "type": "flogo:function",
+  "version": "0.0.1",
+  "title": "Merge Maps",
+  "description": "merge list of maps together",
+  "homepage": "https://github.com/prject-flogo/contrib/tree/master/function/number",
+  "functions": [
+    {
+      "name": "merge",
+      "description": "merge list of maps together",
+      "varArgs": true,
+      "args": [
+        {
+          "name": "maps",
+          "type": "array"
+        },
+        {
+          "name": "mergeKey",
+          "type": "array"
+        }
+      ]
+    }
+  ]
+}
