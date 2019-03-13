@@ -28,11 +28,24 @@ func (fnMerge) Sig() (paramTypes []data.Type, isVariadic bool) {
 func (fnMerge) Eval(params ...interface{}) (interface{}, error) {
 	maps := params[0].([]interface{})
 	mergeKey := params[1].(string)
-	var output map[string]interface{}
+	output := make(map[string]interface{})
+	// fmt.Println(maps)
+	// fmt.Println(mergeKey)
 
-	indval := maps[0].(map[string]interface{})[mergeKey]
+	// indval := maps[0].(map[string]interface{})[mergeKey]
+	// fmt.Println(indval)
+
+	var indval interface{}
 
 	for i, m := range maps {
+		if m == nil {
+			continue
+		}
+		if indval == nil {
+			indval = m.(map[string]interface{})[mergeKey]
+		}
+		// fmt.Println(m)
+		// fmt.Println(m.(map[string]interface{})[mergeKey])
 		if m.(map[string]interface{})[mergeKey] != indval {
 			return nil, fmt.Errorf("there exists multiple indexs, currently we are assuming one index")
 		}
