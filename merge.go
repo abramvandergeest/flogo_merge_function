@@ -22,22 +22,22 @@ func (fnMerge) Name() string {
 }
 
 func (fnMerge) Sig() (paramTypes []data.Type, isVariadic bool) {
-	return []data.Type{data.TypeArray, data.TypeArray}, false
+	return []data.Type{data.TypeArray, data.TypeString}, false
 }
 
 func (fnMerge) Eval(params ...interface{}) (interface{}, error) {
 	maps := params[0].([]map[string]interface{})
-	mergeKey := params[1].([]string)
+	mergeKey := params[1].(string)
 	var output map[string]interface{}
 
-	indval := maps[0][mergeKey[0]]
+	indval := maps[0][mergeKey]
 
 	for i, m := range maps {
-		if m[mergeKey[i]] != indval {
+		if m[mergeKey] != indval {
 			return nil, fmt.Errorf("there exists multiple indexs, currently we are assuming one index")
 		}
 		for key, val := range m {
-			if key != mergeKey[i] || i == 0 {
+			if key != mergeKey || i == 0 {
 				output[key] = val
 			}
 		}
