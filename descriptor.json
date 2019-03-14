@@ -1,5 +1,5 @@
 {
-  "name": "merge",
+  "name": "flogo_merge_function",
   "type": "flogo:function",
   "version": "0.0.1",
   "title": "Merge Maps",

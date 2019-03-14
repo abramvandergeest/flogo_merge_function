@@ -1,4 +1,4 @@
-package merge
+package flogo_merge_function
 
 import (
 
