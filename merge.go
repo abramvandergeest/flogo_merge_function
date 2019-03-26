@@ -55,6 +55,6 @@ func (fnMerge) Eval(params ...interface{}) (interface{}, error) {
 			}
 		}
 	}
-	fmt.Println(output)
+
 	return output, nil
 }
