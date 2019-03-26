@@ -1,9 +1,9 @@
 {
-  "name": "flogo_merge_function",
+  "name": "currentTimeFn",
   "type": "flogo:function",
   "version": "0.0.1",
-  "title": "Merge Maps",
-  "description": "merge list of maps together",
+  "title": "currentTimeFn",
+  "description": "returns current time",
   "homepage": "https://github.com/prject-flogo/contrib/tree/master/function/number",
   "functions": [
     {
